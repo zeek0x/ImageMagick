@@ -975,6 +975,7 @@ MagickExport ImageInfo *CloneImageInfo(const ImageInfo *image_info)
     (void) CloneString(&clone_info->texture,image_info->texture);
   if (image_info->density != (char *) NULL)
     (void) CloneString(&clone_info->density,image_info->density);
+  clone_info->word_break=image_info->word_break;
   clone_info->pointsize=image_info->pointsize;
   clone_info->fuzz=image_info->fuzz;
   clone_info->matte_color=image_info->matte_color;

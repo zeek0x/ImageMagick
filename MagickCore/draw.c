@@ -6020,6 +6020,8 @@ MagickExport void GetDrawInfo(const ImageInfo *image_info,DrawInfo *draw_info)
   draw_info->border_color=clone_info->border_color;
   if (clone_info->server_name != (char *) NULL)
     draw_info->server_name=AcquireString(clone_info->server_name);
+  draw_info->word_break = clone_info->word_break == UndefinedWordBreakType ?
+    NormalWordBreakType : clone_info->word_break;
   option=GetImageOption(clone_info,"direction");
   if (option != (const char *) NULL)
     draw_info->direction=(DirectionType) ParseCommandOption(

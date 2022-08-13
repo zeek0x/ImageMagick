@@ -102,6 +102,7 @@ typedef enum
   MagickValidateOptions,
   MagickVirtualPixelOptions,
   MagickWeightOptions,
+  MagickWordBreakOptions,
   MagickAutoThresholdOptions,
   MagickToolOptions,
   MagickCLIOptions,

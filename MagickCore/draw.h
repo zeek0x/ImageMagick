@@ -269,6 +269,9 @@ typedef struct _DrawInfo
   size_t
     weight;
 
+  size_t
+    word_break;
+
   char
     *encoding;
 

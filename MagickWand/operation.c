@@ -1582,6 +1582,16 @@ WandPrivate void CLISettingOptionInfo(MagickCLI *cli_wand,
           (void) SetImageOption(_image_info,option+1,arg1);
           break;
         }
+        if (LocaleCompare("word-break",option+1) == 0)
+        {
+          parse=ParseCommandOption(MagickWordBreakOptions,MagickFalse,
+               ArgOption("undefined"));
+          if (parse < 0)
+            CLIWandExceptArgBreak(OptionError,"UnrecognizedWordBreakType",
+                 option,arg1);
+          _image_info->word_break=(WordBreakType) parse;
+          break;
+        }
       CLIWandExceptionBreak(OptionError,"UnrecognizedOption",option);
     }
     default:

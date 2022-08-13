@@ -128,6 +128,13 @@ typedef struct _ChromaticityInfo
     white_point;
 } ChromaticityInfo;
 
+typedef enum
+{
+  UndefinedWordBreakType,
+  NormalWordBreakType,
+  BreakWordBreakType
+} WordBreakType;
+
 #include "MagickCore/blob.h"
 #include "MagickCore/colorspace.h"
 #include "MagickCore/cache-view.h"
@@ -415,6 +422,9 @@ struct _ImageInfo
     *font,              /* DUP for draw_info */
     *texture,           /* montage/display background tile */
     *density;           /* DUP for image and draw_info */
+
+  WordBreakType
+    word_break;         /* How to break words at the end of a line */
 
   double
     pointsize,
